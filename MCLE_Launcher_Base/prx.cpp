@@ -15,7 +15,8 @@ SYS_MODULE_START( _MCLE_Launcher_Base_prx_entry );
 // PRX Entry will be called when loaded.
 extern "C" int _MCLE_Launcher_Base_prx_entry(void)
 {
-
+    // Wait 15.000 mills, (15 seconds.)
+    sleep_for_real(15000);
     GameRenderer::Write(); // namespace for patching game renderer.
-    return SYS_PRX_RESIDENT;
-}
+    return _SYS_PRX_STOP; // Terminate execution at the end of this function 
+} // <-
