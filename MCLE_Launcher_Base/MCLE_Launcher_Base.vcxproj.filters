@@ -1,3 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="prx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\level_renderer.h" />
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\gui_component.h" />
+    <ClInclude Include="src\gl.h" />
+    <ClInclude Include="src\vectors.h" />
+  </ItemGroup>
 </Project>

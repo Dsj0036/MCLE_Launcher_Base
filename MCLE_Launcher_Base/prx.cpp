@@ -1,21 +1,21 @@
 
 
-#include <cellstatus.h>
-#include <sys/prx.h>
+#include <cellstatus.h> // Default inclusion with two status definitions.
+#include <sys/prx.h> // Default inclusion for declaring entry point.
+#include "src\level_renderer.h" // Include for using GameRenderer namespace.
+
+
+
+// SYS_MODULE_INFO(codename, attribute, minor, major)
 
 SYS_MODULE_INFO( MCLE_Launcher_Base, 0, 1, 1);
 SYS_MODULE_START( _MCLE_Launcher_Base_prx_entry );
 
-SYS_LIB_DECLARE_WITH_STUB( LIBNAME, SYS_LIB_AUTO_EXPORT, STUBNAME );
-SYS_LIB_EXPORT( _MCLE_Launcher_Base_export_function, LIBNAME );
 
-// An exported function is needed to generate the project's PRX stub export library
-extern "C" int _MCLE_Launcher_Base_export_function(void)
-{
-    return CELL_OK;
-}
-
+// PRX Entry will be called when loaded.
 extern "C" int _MCLE_Launcher_Base_prx_entry(void)
 {
+
+    GameRenderer::Write(); // namespace for patching game renderer.
     return SYS_PRX_RESIDENT;
 }

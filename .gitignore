@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+MCLE_Launcher_Base/src/gl.h
+MCLE_Launcher_Base/src/game.h
+MCLE_Launcher_Base/src/gui_component.h
